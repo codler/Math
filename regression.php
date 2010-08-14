@@ -11,7 +11,7 @@ if (!class_exists('zc_math')) {
  * 
  * Example usage
  * <code>
- * $data = array(array($x1, $y2), array($x2, $y2));
+ * $data = array(array($x1, $y1), array($x2, $y2));
  * $linear = new zc_math_linear($data);
  * $linear->calculate();
  * // y = k*x + m
@@ -86,7 +86,7 @@ class zc_math_linear {
 	 * @return array Get values in multidimention by formula
 	 * @since 1.0
 	 */
-	public function _get_values_by_formula($data, $formula) {
+	protected function _get_values_by_formula($data, $formula) {
 		return array_map(create_function('$x', 'return ' . $formula . ';'), $data);
 	}
 	

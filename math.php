@@ -31,7 +31,7 @@ class zc_math {
 	public static function factory() {
 		$args = func_get_args();
 		$class = array_shift($args);
-		$reflection = new ReflectionClass('zc_math_' . $class);
+		$reflection = new ReflectionClass(__CLASS__ . '_' . $class);
 		return $reflection->newInstanceArgs($args);
 	}
 
